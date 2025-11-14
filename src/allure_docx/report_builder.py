@@ -33,8 +33,8 @@ class ReportBuilder:
 
         self.session = {
             "allure_dir": config['allure_dir'],
-            "start": 0,
-            "stop": 0,
+            "start": None,
+            "stop": None,
             "results": {
                 "passed": 0,
                 "skipped": 0,
