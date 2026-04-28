@@ -289,7 +289,8 @@ class ReportBuilder:
         indent_str = indent * self.indent * " "
         if "steps" in parent_step:
             for step in parent_step["steps"]:
-                if step["status"] in ["failed", "broken"]:
+                step_status = step.get("status", "passed")  # Default to "passed" if status is not present
+                if step_status in ["failed", "broken"]:
                     step_style = "Step Failed"
                 else:
                     step_style = "Step"
